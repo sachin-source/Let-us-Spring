@@ -1,4 +1,4 @@
-package com.tight.coupling;
+package com.loose.coupling;
 
 public class UserManager {
     private UserDatabase userDatabase = new UserDatabase();

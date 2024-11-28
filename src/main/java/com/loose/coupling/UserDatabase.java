@@ -1,4 +1,4 @@
-package com.tight.coupling;
+package com.loose.coupling;
 
 public class UserDatabase {
     public String getUserDetails(){
