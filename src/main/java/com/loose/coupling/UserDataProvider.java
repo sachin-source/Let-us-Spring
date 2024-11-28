@@ -1,2 +1,4 @@
-package com.loose.coupling;public interface UserDataProvider {
+package com.loose.coupling;
+
+public interface UserDataProvider {
 }
