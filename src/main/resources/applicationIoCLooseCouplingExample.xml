@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    boilerplate resource : https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="carSpecification" class="car.example.setter.injection.Specification">
+        <!-- When you add this below line, spring automatically sets the message field with corresponding value by calling the corresponding setter method -->
+        <property name="make" value="Toyota"/>
+        <property name="model" value="Corolla"/>
+    </bean>
+
+    <bean id="userDataProvider" class="com.ioc.coupling.UserDatabaseProvider" />
+    <bean id="newDatabaseProvider" class="com.ioc.coupling.NewDatabaseProvider" />
+    <bean id="webServiceDataProvider" class="com.ioc.coupling.UserWebserviceProvider" />
+
+    <bean id="userManagerWithUserDataProvider" class="com.ioc.coupling.UserManager" >
+        <constructor-arg ref="userDataProvider" />
+    </bean>
+
+    <bean id="userManagerWithNewDataProvider" class="com.ioc.coupling.NewDatabaseProvider" >
+        <constructor-arg ref="newDatabaseProvider" />
+    </bean>
+
+    <bean id="userManagerWithWebServiceProvider" class="com.ioc.coupling.UserWebserviceProvider" >
+        <constructor-arg ref="webServiceDataProvider" />
+    </bean>
+
+</beans>
