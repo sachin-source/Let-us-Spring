@@ -1,4 +1,4 @@
-package com.ioc;
+package com.ioc.coupling;
 
 public interface UserDataProvider {
     String getUserDetails();

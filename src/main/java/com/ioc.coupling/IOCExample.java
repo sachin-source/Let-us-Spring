@@ -1,17 +1,13 @@
 package com.ioc.coupling;
 
-public class LooseCouplingExample {
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class IOCExample {
     public static void main(String[] args) {
-        UserDataProvider databaseProvider = new UserDatabaseProvider();
-        UserManager userManagerWithDB = new UserManager(databaseProvider);
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationIoCLooseCouplingExample.xml");
+
+        UserManager userManagerWithDB = (UserManager) context.getBean("userManagerWithUserDataProvider");
         System.out.println(userManagerWithDB.getUserInfo());
-
-        UserDataProvider WSProvider = new UserWebserviceProvider();
-        UserManager userManagerWithWS = new UserManager(WSProvider);
-        System.out.println(userManagerWithWS.getUserInfo());
-
-        UserDataProvider newDBProvider = new NewDatabaseProvider();
-        UserManager userManagerWithNewDB = new UserManager(newDBProvider);
-        System.out.println(userManagerWithNewDB.getUserInfo());
     }
 }
