@@ -20,12 +20,12 @@
         <constructor-arg ref="userDataProvider" />
     </bean>
 
-    <bean id="userManagerWithNewDataProvider" class="com.ioc.coupling.NewDatabaseProvider" >
-        <constructor-arg ref="newDatabaseProvider" />
-    </bean>
+<!--    <bean id="userManagerWithNewDataProvider" class="com.ioc.coupling.NewDatabaseProvider" >-->
+<!--        <constructor-arg ref="newDatabaseProvider" />-->
+<!--    </bean>-->
 
-    <bean id="userManagerWithWebServiceProvider" class="com.ioc.coupling.UserWebserviceProvider" >
-        <constructor-arg ref="webServiceDataProvider" />
-    </bean>
+<!--    <bean id="userManagerWithWebServiceProvider" class="com.ioc.coupling.UserWebserviceProvider" >-->
+<!--        <constructor-arg ref="webServiceDataProvider" />-->
+<!--    </bean>-->
 
 </beans>
