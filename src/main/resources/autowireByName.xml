@@ -12,6 +12,7 @@
         <property name="model" value="Corolla"/>
     </bean>
 
+    <!--    Injection of class happens via setter by name; above mentioned beans will be autowired and set based on the name (id) -->
     <bean id="myCar" class="com.example.autowire.name.Car" autowire="byName" />
 
 </beans>
