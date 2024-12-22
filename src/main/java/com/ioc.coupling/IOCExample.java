@@ -9,5 +9,11 @@ public class IOCExample {
 
         UserManager userManagerWithDB = (UserManager) context.getBean("userManagerWithUserDataProvider");
         System.out.println(userManagerWithDB.getUserInfo());
+
+        UserManager userManagerWithNewDB = (UserManager) context.getBean("userManagerWithNewDatabaseProvider");
+        System.out.println(userManagerWithNewDB.getUserInfo());
+
+        UserManager userManagerWithWebService = (UserManager) context.getBean("userManagerWithWebServiceProvider");
+        System.out.println(userManagerWithWebService.getUserInfo());
     }
 }
