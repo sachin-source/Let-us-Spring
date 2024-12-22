@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    boilerplate resource : https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="specification" class="com.example.autowire.type.Specification">
+        <!-- When you add this below line, spring automatically sets the message field with corresponding value by calling the corresponding setter method -->
+        <property name="make" value="Toyota"/>
+        <property name="model" value="Corolla"/>
+    </bean>
+
+    <!--    Injection of class happens via setter by type; above mentioned beans will be autowired and set based on the name (id) -->
+    <bean id="myCar" class="com.example.autowire.type.Car" autowire="byType" />
+
+</beans>
