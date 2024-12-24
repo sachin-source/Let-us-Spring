@@ -2,7 +2,7 @@ package com.example.componentscan;
 
 import org.springframework.stereotype.Component;
 
-@Component("employee")
+@Component("employee") // Default, it takes the value of className as @Component but it can be configured
 public class Employee {
     private int employeeId;
     private String firstName;
