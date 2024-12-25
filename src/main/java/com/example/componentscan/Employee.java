@@ -1,12 +1,19 @@
 package com.example.componentscan;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("employee") // Default, it takes the value of className as @Component but it can be configured
 public class Employee {
     private int employeeId;
+
+    @Value("Sachin")
     private String firstName;
+
+    @Value("${java.home}")
     private String lastName;
+
+    @Value("#{4*4}")
     private double salary;
 
     public int getEmployeeId() {
